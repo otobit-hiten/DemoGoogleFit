@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuild {
 
-    const val BASE_URL ="https://www.googleapis.com/"
+    const val BASE_URL ="https://oauth2.googleapis.com/"
 
     fun getInstance():Retrofit{
         return  Retrofit.Builder()
@@ -13,8 +13,6 @@ object RetrofitBuild {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
-
     val apiService :OauthServer? = getInstance().create(OauthServer::class.java)
 
 }
